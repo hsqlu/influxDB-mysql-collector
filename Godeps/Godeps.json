@@ -1,0 +1,26 @@
+{
+	"ImportPath": "github.com/hsqlu/influxDB-mysql-collector",
+	"GoVersion": "go1.6",
+	"Deps": [
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.2-188-g66312f7",
+			"Rev": "66312f7fe2678aa0f5ec770f96702f4c4ec5aa8e"
+		},
+		{
+			"ImportPath": "github.com/influxdata/influxdb/client/v2",
+			"Comment": "v0.10.0-662-gacc8f3e",
+			"Rev": "acc8f3e211cf54f13739d5a9584420c7bfd6f716"
+		},
+		{
+			"ImportPath": "github.com/influxdata/influxdb/models",
+			"Comment": "v0.10.0-662-gacc8f3e",
+			"Rev": "acc8f3e211cf54f13739d5a9584420c7bfd6f716"
+		},
+		{
+			"ImportPath": "github.com/influxdata/influxdb/pkg/escape",
+			"Comment": "v0.10.0-662-gacc8f3e",
+			"Rev": "acc8f3e211cf54f13739d5a9584420c7bfd6f716"
+		}
+	]
+}

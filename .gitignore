@@ -1,0 +1,4 @@
+# goide project files
+.idea
+
+/vendor
