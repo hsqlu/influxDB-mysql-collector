@@ -12,10 +12,8 @@ import (
 )
 
 type Cfg struct {
-	LogFile      string
-	LogLevel     int
-	FalconClient string
-	Endpoint     string
+	LogFile  string
+	LogLevel int
 
 	User string
 	Pass string
@@ -27,12 +25,12 @@ var cfg Cfg
 
 func init() {
 	var cfgFile string
-	flag.StringVar(&cfgFile, "c", "mon.cfg", "myMon configure file")
+	flag.StringVar(&cfgFile, "c", "collector.cfg", "The collector configure file")
 	flag.Parse()
 
 	if _, err := os.Stat(cfgFile); err != nil {
 		if os.IsNotExist(err) {
-			log.WithField("cfg", cfgFile).Fatalf("myMon config file does not exists: %v", err)
+			log.WithField("cfg", cfgFile).Fatalf("config file does not exists: %v", err)
 		}
 	}
 
@@ -70,16 +68,6 @@ func (conf *Cfg) readConf(file string) error {
 		return err
 	}
 
-	conf.FalconClient, err = c.GetString("default", "falcon_client")
-	if err != nil {
-		return err
-	}
-
-	conf.Endpoint, err = c.GetString("default", "endpoint")
-	if err != nil {
-		return err
-	}
-
 	conf.User, err = c.GetString("mysql", "user")
 	if err != nil {
 		return err
@@ -100,7 +88,7 @@ func (conf *Cfg) readConf(file string) error {
 }
 
 func main() {
-	fmt.Println(cfg.User)
+	fmt.Println(cfg)
 	// Make client
 	c, err := client.NewHTTPClient(client.HTTPConfig{
 		Addr:     "http://localhost:8086",

@@ -1,4 +1,7 @@
 # goide project files
 .idea
 
+# ignore log files
+*.log
+
 /vendor
